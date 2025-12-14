@@ -1,0 +1,148 @@
+"use client";
+
+import { Plus, Search } from "lucide-react";
+
+export default function Dashboard() {
+  const handleAddRecord = () => {
+    window.location.href = "/add-record";
+  };
+
+  const handleSearch = () => {
+    window.location.href = "/search-records";
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-[#F0F9F4] via-white to-[#E8F5E9]">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-gradient-to-r from-[#00843D] to-[#005C2E] border-b-4 border-[#DAA520] h-[72px] flex items-center px-4 sm:px-6 lg:px-10 shadow-xl">
+        <div className="flex items-center justify-between w-full max-w-screen-2xl mx-auto">
+          <div className="flex items-center space-x-3">
+            <img
+              src="https://ucarecdn.com/c000bd06-b6f2-48da-a9a6-0206793fcefa/-/format/auto/"
+              alt="Government of Sindh"
+              className="w-12 h-12 object-contain drop-shadow-lg"
+            />
+            <div>
+              <span className="text-white font-bold text-lg block drop-shadow-md">
+                District Health Office Badin
+              </span>
+              <span className="text-[#DAA520] font-semibold text-xs block">
+                Zero Dose Data of NIDs December 2025
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="px-4 sm:px-6 lg:px-10 py-8 lg:py-12 max-w-screen-2xl mx-auto">
+        {/* Greeting */}
+        <div className="mb-10">
+          <div className="flex items-start gap-6 mb-8 bg-white rounded-2xl p-8 shadow-xl border-l-8 border-[#00843D]">
+            <div className="flex-shrink-0">
+              <div className="w-24 h-24 bg-gradient-to-br from-[#00843D] to-[#005C2E] rounded-2xl flex items-center justify-center p-4 shadow-lg">
+                <img
+                  src="https://ucarecdn.com/c000bd06-b6f2-48da-a9a6-0206793fcefa/-/format/auto/"
+                  alt="Sindh Government Logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+            <div className="flex-1">
+              <h1 className="text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-[#00843D] to-[#005C2E] bg-clip-text text-transparent mb-3 leading-tight">
+                District Health Office Badin (NIDs December 2025)
+              </h1>
+              <p className="text-[#555555] text-lg lg:text-xl leading-relaxed">
+                Committed to improving child health through comprehensive
+                vaccination coverage across Badin District
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Actions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+          {/* Add New Record Card */}
+          <button
+            onClick={handleAddRecord}
+            className="group relative bg-gradient-to-br from-[#00843D] via-[#00843D] to-[#005C2E] rounded-2xl p-8 lg:p-10 text-white cursor-pointer hover:shadow-2xl transition-all duration-300 text-left h-full border-l-8 border-[#DAA520] overflow-hidden hover:scale-105 hover:-translate-y-1"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12 group-hover:scale-150 transition-transform duration-500"></div>
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-3xl lg:text-4xl font-extrabold">
+                  Add New Entry
+                </h2>
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:rotate-90 group-hover:bg-white/30 transition-all duration-300 shadow-lg">
+                  <Plus size={32} strokeWidth={3} />
+                </div>
+              </div>
+              <p className="text-white/95 text-lg lg:text-xl leading-relaxed font-medium">
+                Enter a new zero dose vaccination record with all required
+                details for a child
+              </p>
+            </div>
+          </button>
+
+          {/* Search & Update Card */}
+          <button
+            onClick={handleSearch}
+            className="group relative bg-white rounded-2xl p-8 lg:p-10 cursor-pointer hover:shadow-2xl transition-all duration-300 text-left h-full border-2 border-[#00843D] border-l-8 border-l-[#DAA520] overflow-hidden hover:scale-105 hover:-translate-y-1"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#00843D]/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#00843D]/5 rounded-full -ml-12 -mb-12 group-hover:scale-150 transition-transform duration-500"></div>
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-3xl lg:text-4xl font-extrabold text-[#00843D]">
+                  Search & Update
+                </h2>
+                <div className="w-16 h-16 bg-gradient-to-br from-[#E8F5E9] to-[#C8E6C9] rounded-2xl flex items-center justify-center group-hover:rotate-12 group-hover:scale-110 transition-all duration-300 shadow-lg">
+                  <Search
+                    size={32}
+                    className="text-[#00843D]"
+                    strokeWidth={3}
+                  />
+                </div>
+              </div>
+              <p className="text-[#555555] text-lg lg:text-xl leading-relaxed font-medium">
+                Search existing records and add QR codes without re-entering all
+                data
+              </p>
+            </div>
+          </button>
+        </div>
+
+        {/* Info Section */}
+        <div className="bg-gradient-to-br from-white to-[#F5F9F7] border-l-8 border-[#00843D] rounded-2xl p-8 lg:p-10 shadow-xl">
+          <h3 className="text-2xl lg:text-3xl font-extrabold text-[#00843D] mb-6 flex items-center gap-3">
+            <span className="w-3 h-3 bg-[#DAA520] rounded-full"></span>
+            How to Use
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-t-4 border-[#00843D]">
+              <h4 className="font-bold text-lg text-[#00843D] mb-3 flex items-center gap-2">
+                <Plus size={20} />
+                Adding New Records
+              </h4>
+              <p className="text-[#555555] text-base lg:text-lg leading-relaxed">
+                Click "Add New Entry" to fill in complete vaccination data for a
+                new zero dose child. All required fields must be completed.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-t-4 border-[#00843D]">
+              <h4 className="font-bold text-lg text-[#00843D] mb-3 flex items-center gap-2">
+                <Search size={20} />
+                Updating QR Codes
+              </h4>
+              <p className="text-[#555555] text-base lg:text-lg leading-relaxed">
+                Use Search & Update to find existing records by Taluka, UC,
+                Child Name, or Father's Name, then quickly add the QR code.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
